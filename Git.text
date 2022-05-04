@@ -32,6 +32,135 @@ git config -h
 
 ------------------Crear un repositorio------------------
 
+mkdir name_directory (para crear un directorio)
+cd name_directory (para entrar a un directorio)
+ls (para ver los archivos que hay en el directorio)
+ls -a (para ver los archivos que hay en el directorio incluyendo los archivos ocultos)
+touch name_file (para crear un archivo)
+
+
 1. Inicializar un repositorio:
 git init ---> crea un archivo .git que contiene la informacion de git (inicializar el repositorio)
 
+En el directorio .git es donde se gurda la informacion del repositorio 
+Inicializado repositorio Git vacío en /home/jisula/Documentos/Git/Git_1/.git/
+
+Flujo de trabajo en git:
+Local -> Stage -> Commit ------> Remote (server)
+
+2.Estado del repositorio:
+git status (para ver el estado del repositorio)
+
+3. Añadir archivos al staged area:
+git add name_file (para añadir un archivo al staged area)
+
+» git add . (para añadir todos los archivos al staged area)
+» git add -u (para añadir todos los archivos al staged area, excepto los archivos que estan en el area de staging)
+» git add .extencion (para añadir todos los archivos con la misma extencion al staged area)
+
+4. Hacer un commit:
+git commit -m "mensaje" (para hacer un commit) --> Comprometer los cambios en los archivos en el area de staging al repositorio.
+
+5. Visualizar el historial de los commits:
+git log (para visualizar el historial de los commits)
+Ejemplo:
+        commit b4e99f1ab65dd5b296ef80d44342e108941f2f2e (HEAD -> master)
+        Author: Jose Isaula <isaulajosue504@gmail.com>
+        Date:   Wed May 4 04:42:59 2022 -0600
+
+        Agregando los archivos Index.html Suma.cpp style.css
+
+git log --stat (para visualizar el historial de los commits con la informacion de los archivos)
+
+git log --oneline (para visualizar el historial de los commits con la informacion de los archivos)
+------------------------------------------------------------------------
+Usando el comando git commit, muestra como unreporte del repositorio. Los cambios que no se han realizado.
+
+jisula@jisaula407:~/Documentos/Git/Git_1$ git commit 
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+        modificado:     Index.html
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+        .vscode/
+        Git.text
+        Suma
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+------------------------------------------------------------------------
+
+6. Cambiar el mensaje de un commit:
+    A. Un commit que todavía no se halla subido al repositorio.
+        1. Vamos hasta nuestro repositorio que contiene el commit que queremos modificar.
+        2. Escribimos "git commit --amend" y pulsamos Enter.
+        3. Se abre un editor de texto donde podrás modificar el mensaje del commit, y después deberemos guardar y cerrar.       
+    B. Un commit que ya se halla subido al repositorio.
+        1. Deberemos seguir los tres pasos anteriores del caso A.
+        2. Deberemos forzar un push para que sobreescriba el anterior commit, con el comando:
+                 git push --force 
+ 
+7. Eliminar archivo del repositorio
+git rm name_file (para eliminar un archivo del repositorio)
+
+8. Renombrar archivos del repositorio:
+git mv name_file new_name_file (para renombrar un archivo del repositorio)
+
+mv name_file new_name_file (para renombrar un archivo del repositorio)
+
+9. VCisualizar los cambios en los archivos que aun no se han subido al repositorio:
+git diff (para ver los cambios que no se han subido al repositorio)
+
+git diff --staged (para ver los cambios que se han subido al repositorio al staging area y los que no se han subido)
+
+10. Alternativa a git status:
+git status -s 
+
+jisula@jisaula407:~/Documentos/Git/Git_1$ git status -s 
+ M Index.html                   (M  = Modificado) 
+AM ciclomientras.cpp            (AM  = Agregado y modificado)
+?? Git.text                     (??  = No se encuentra en el repositorio)
+
+
+--------------------------------------------------------------------------
+Ramas(Branch) en git: 
+La rama principal es el master.
+
+git branch (para ver las ramas)
+
+git brach branch_name (para crear una nueva rama)
+
+git branch -d branch_name (para eliminar una rama)
+
+git branch -m branch_name (para renombrar una rama)
+
+git branch checkout branch_name (para cambiar de rama)
+
+git branch checkout -b branch_name (para crear una nueva rama y cambiarse a ella)
+
+
+--------------------------------------------------------------------------
+cat name_file (para ver el contenido de un archivo)
+
+Fusionar cambios de la rama_1 a la rama master:
+git merge branch_1 (para fusionar los cambios de la rama_1 a la rama master)
+
+Ejemplo:
+Se tiene 2 ramas, rama master y rama_1.
+para combinar los cambios de rama_1 a la rama master, se debe ejecutar el comando:
+git merge rama_1 desde la rama master.
+
+
+--------------------------------------------------------------------------
+Repositorio remoto
+
+git remote add origin url (para añadir un repositorio remoto)
+
+git push -u origin master (para subir los cambios a un repositorio remoto)
+
+git remote -v (para ver los repositorios remotos)
+
+Subir una nueva rama al repositorio remoto 
+git push -u origin branch_name (para subir una nueva rama al repositorio remoto) 
