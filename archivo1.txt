@@ -1,0 +1,3 @@
+Este es el primer texto que se ingresa al archivo
+
+Modificacion 1; Este es el segundo texto que se ingresa al archivo
