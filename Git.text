@@ -1,0 +1,37 @@
+Git: es un sistema de control de versiones. 
+
+------------------Configuraciones------------------
+1. version de git:
+git --version (version instalada en el sistema operativo de Git)
+
+2. Configuracion global de git: 
+git config --global user.name "nombre_de _usuario"
+git config --global user.email "e-mail_de_usuario"
+
+3. Indicaarle a git cual es nuestro editor de texto predeterminado:
+git config --global core.editor "code --wait" (--wait es para que la terminal se quede esperando que el editor termine)
+
+4. Visulaizar el archi de configuracion de git:
+git config --global -e (para visualizar el archivo de configuracion)
+
+5. visualizar configuraciones de usuario:
+git config --list (para visualizar todas las configuraciones)user 
+
+6. Configuracion core.autocrlf: 
+Cada vez que presionas Enter en tu teclado, insertas un caracter invisible denominado fin de línea. Esto se maneja de forma diferente en los diferentes sistemas operativos.
+En configuraciones de Windows, el caracter invisible fin de línea es el caracter \r\n. En Linux, el caracter invisible fin de línea es el caracter \n.  En Mac, el caracter invisible fin de línea es el caracter \r.
+
+Para la configuraciones en git se usa el comando:
+git config --global core.autocrlf false (para que no se maneje el caracter invisible fin de línea)
+git config --global core.autocrlf true (para que se maneje el caracter invisible fin de línea)
+git config --global core.autocrlf input (para que se maneje el caracter invisible fin de línea) Esto se maneja en linux y mac.
+
+7. Mas sobre las configuraciones de git:
+git config --help (para ver las configuraciones de git) o tambien 
+git config -h 
+
+------------------Crear un repositorio------------------
+
+1. Inicializar un repositorio:
+git init ---> crea un archivo .git que contiene la informacion de git (inicializar el repositorio)
+
