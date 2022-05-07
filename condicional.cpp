@@ -10,7 +10,7 @@ main (){
     cin>>y;
 
     if (x>y){
-        cout<<"El primer numero es mayor que el segundo"<<endl;
+        cout<<"El primer nugit push -u origin mainmero es mayor que el segundo"<<endl;
     }
     else if (x<y){
         cout<<"El segundo numero es mayor que el primero"<<endl;
